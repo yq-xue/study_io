@@ -50,4 +50,16 @@ public class ChatClient {
     public static void main(String[] args) throws IOException {
         new ChatClient().start();
     }
+
+    public void close() throws IOException {
+        if (writer != null) {
+            writer.close();
+        }
+        if (reader != null) {
+            reader.close();
+        }
+        if (socket != null) {
+            socket.close();
+        }
+    }
 }
