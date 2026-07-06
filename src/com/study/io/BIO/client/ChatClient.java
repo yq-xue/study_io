@@ -51,15 +51,15 @@ public class ChatClient {
         new ChatClient().start();
     }
 
-    public void close() throws IOException {
-        if (writer != null) {
-            writer.close();
-        }
-        if (reader != null) {
-            reader.close();
-        }
-        if (socket != null) {
-            socket.close();
-        }
+    public BufferedReader getReader() {
+        return reader;
+    }
+
+    public BufferedWriter getWriter() {
+        return writer;
+    }
+
+    public Socket getSocket() {
+        return socket;
     }
 }
